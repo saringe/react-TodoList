@@ -9,7 +9,8 @@ export default class App extends Component {
   state={
     items: [{id:1, name:"call"}, {id:2, name: "sleep"}],
     id: uuid(),
-    editItem:false
+    editItem:false,
+    item:""
   }
   handleChange = (e) => 
   {console.log("handleChange")};
@@ -35,8 +36,20 @@ export default class App extends Component {
         <div className="row">
           <div className="col-10 max-auto cl-md-8 mt-4">
             <h3 className="text-capitalize text-center">Todo List</h3>
-          <TodoInput item={this.state.item} handleChange={this.handleChange} handleSubmit={this.handleSubmit} editItem={this.state.editItem}></TodoInput>
-          <TodoList items={this.state.items} handleDelete={this.handleDelete} handleEdit={this.handleEdit} clearList={this.clearList}></TodoList>
+          <TodoInput 
+          item={this.state.item} 
+          handleChange={this.handleChange} 
+          handleSubmit={this.handleSubmit} 
+          editItem={this.state.editItem}>
+
+          </TodoInput>
+          <TodoList 
+          items={this.state.items} 
+          handleDelete={this.handleDelete} 
+          handleEdit={this.handleEdit} 
+          clearList={this.clearList}>
+
+          </TodoList>
           </div>
         </div>
       </div>
