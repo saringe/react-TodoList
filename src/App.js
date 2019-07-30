@@ -12,11 +12,28 @@ export default class App extends Component {
     editItem:false,
     item:""
   }
-  handleChange = (e) => 
-  {console.log("handleChange")};
+  handleChange = (e) => {
+this.setState({
+  item:e.target.value
+})
+  };
+  
 
   handleSubmit = (e) => 
-  {console.log("handleSubmit")};
+  {e.preventDefault();
+    const newItem = {
+      id: this.state.id,
+      Title: this.state.item
+    }
+    const updatedItem ={...this.state.items, newItem}
+    this.setState({
+      items: updatedItem,
+      item:"",
+      id: uuid(),
+      editItem:false
+
+    } ,() => console.log(this.state))
+    };
 
   clearList = () => 
   {console.log("clearList")};
