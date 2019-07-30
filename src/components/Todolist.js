@@ -3,7 +3,7 @@ import Todoitem from './Todoitem'
 
 export default class Todolist extends Component {
     render() {
-        const {items, handleDelete,handleEdit,clearList}= this.props;
+        const {items, handleDelete,handleEdit,clearList}= this.props
         return (
          <ul className="list-group my-5 ">
              <h3 className="text-capitalize text-center">todo list</h3>
