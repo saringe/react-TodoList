@@ -32,8 +32,8 @@ export default class App extends Component {
       id: uuid(),
       editItem:false
 
-    } ,() => console.log(this.state))
-    };
+    
+    })};
 
   clearList = () => 
   {this.setState({
